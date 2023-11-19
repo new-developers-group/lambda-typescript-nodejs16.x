@@ -1,0 +1,21 @@
+{
+  "name": "@gilbertopsantosjr/template-aws-sam-typescript",
+  "version": "1.0.0",
+  "description": "Use AWS lambdas with TypeScript.",
+  "main": "dist/index.js",
+  "author": "Gilberto Santos",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "dev": "concurrently \"npm:dev:build\" \"npm:dev:lambda\"",
+    "dev:build": "tsc --watch",
+    "dev:lambda": "sam local start-api -t ../template.yaml"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.83",
+    "@types/node": "^16.10.2",
+    "aws-sdk": "^2.997.0",
+    "concurrently": "^6.2.2",
+    "typescript": "^4.4.3"
+  }
+}
